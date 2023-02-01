@@ -49,6 +49,7 @@ public class GDynamicInvokeExpr extends AbstractInvokeExpr implements DynamicInv
       List args) {
     super(methodRef, new ValueBox[args.size()]);
     this.bsmRef = bootStrapMethodRef;
+    this.bsmArgBoxes = new ValueBox[bootstrapArgs.size()];
     this.tag = tag;
     for (int i = 0; i < args.size(); i++) {
       this.argBoxes[i] = Grimp.v().newExprBox((Value) args.get(i));
